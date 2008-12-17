@@ -104,7 +104,9 @@ static ClassTree *sharedClassTreeInstance = nil;
 				subClassName = className;
 				class = class_getSuperclass(class);
 			}
-			[[classDictionary_ objectForKey:KEY_ROOT_CLASSES] setObject:[classDictionary_ objectForKey:subClassName] forKey:subClassName];
+			if (subClassName) {
+				[[classDictionary_ objectForKey:KEY_ROOT_CLASSES] setObject:[classDictionary_ objectForKey:subClassName] forKey:subClassName];
+			}
 		}
 	}
 
