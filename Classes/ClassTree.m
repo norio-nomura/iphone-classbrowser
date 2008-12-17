@@ -76,6 +76,8 @@ static ClassTree *sharedClassTreeInstance = nil;
 	[classDictionary_ setObject:subclassDictionary forKey:KEY_ROOT_CLASSES];
 	[subclassDictionary release];
 	
+	NSString *applicationBundlePath = [[NSBundle mainBundle] bundlePath];
+	
 	int numberOfClasses = objc_getClassList(NULL,0);
 	Class classes[numberOfClasses];
 	if (objc_getClassList(classes,numberOfClasses)) {
@@ -84,6 +86,11 @@ static ClassTree *sharedClassTreeInstance = nil;
 			NSString *className = nil;
 			NSString *subClassName = nil;
 			while (class) {
+				imageName = class_getImageName(class);
+				if (strstr(imageName,[applicationBundlePath cStringUsingEncoding:NSNEXTSTEPStringEncoding])) {
+					subClassName = nil;
+					break;
+				}
 				className = [NSString stringWithCString:class_getName(class) encoding:NSNEXTSTEPStringEncoding];
 				if (!(subclassDictionary = [classDictionary_ objectForKey:className])) {
 					subclassDictionary = [[NSMutableDictionary alloc] initWithCapacity:0];
