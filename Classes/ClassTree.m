@@ -76,6 +76,8 @@ static ClassTree *sharedClassTreeInstance = nil;
 	[classDictionary_ setObject:subclassDictionary forKey:KEY_ROOT_CLASSES];
 	[subclassDictionary release];
 	
+	NSString *applicationBundlePath = [[NSBundle mainBundle] bundlePath];
+
 	int numberOfClasses = objc_getClassList(NULL,0);
 	Class classes[numberOfClasses];
 	if (objc_getClassList(classes,numberOfClasses)) {
@@ -83,7 +85,13 @@ static ClassTree *sharedClassTreeInstance = nil;
 			Class class = classes[i];
 			NSString *className = nil;
 			NSString *subClassName = nil;
+			const char *imageName = NULL;
 			while (class) {
+				imageName = class_getImageName(class);
+				if (strstr(imageName,"PrivateFrameworks") || strstr(imageName,[applicationBundlePath cStringUsingEncoding:NSNEXTSTEPStringEncoding])) {
+					subClassName = nil;
+					break;
+				}
 				className = [NSString stringWithCString:class_getName(class) encoding:NSNEXTSTEPStringEncoding];
 				if (!(subclassDictionary = [classDictionary_ objectForKey:className])) {
 					subclassDictionary = [[NSMutableDictionary alloc] initWithCapacity:0];
@@ -96,7 +104,9 @@ static ClassTree *sharedClassTreeInstance = nil;
 				subClassName = className;
 				class = class_getSuperclass(class);
 			}
-			[[classDictionary_ objectForKey:KEY_ROOT_CLASSES] setObject:[classDictionary_ objectForKey:subClassName] forKey:subClassName];
+			if (subClassName) {
+				[[classDictionary_ objectForKey:KEY_ROOT_CLASSES] setObject:[classDictionary_ objectForKey:subClassName] forKey:subClassName];
+			}
 		}
 	}
 

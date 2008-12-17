@@ -2,10 +2,10 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="7.03">
 	<data>
 		<int key="IBDocument.SystemTarget">528</int>
-		<string key="IBDocument.SystemVersion">9F33</string>
+		<string key="IBDocument.SystemVersion">9G55</string>
 		<string key="IBDocument.InterfaceBuilderVersion">677</string>
-		<string key="IBDocument.AppKitVersion">949.34</string>
-		<string key="IBDocument.HIToolboxVersion">352.00</string>
+		<string key="IBDocument.AppKitVersion">949.43</string>
+		<string key="IBDocument.HIToolboxVersion">353.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
 		</object>
@@ -105,10 +105,6 @@
 									<string key="NSClassName">NSImage</string>
 									<string key="NSResourceName">btnProtocol.png</string>
 								</object>
-								<reference key="IBUITabBar" ref="267984052"/>
-							</object>
-							<object class="IBUITabBarItem" id="195875126">
-								<string key="IBUITitle">Ivar</string>
 								<reference key="IBUITabBar" ref="267984052"/>
 							</object>
 						</object>
@@ -228,14 +224,6 @@
 					</object>
 					<int key="connectionID">108</int>
 				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">itemInstanceVariables</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="195875126"/>
-					</object>
-					<int key="connectionID">110</int>
-				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -279,7 +267,6 @@
 							<reference ref="115741538"/>
 							<reference ref="413803867"/>
 							<reference ref="960767369"/>
-							<reference ref="195875126"/>
 						</object>
 						<reference key="parent" ref="293158898"/>
 					</object>
@@ -318,11 +305,6 @@
 						<reference key="object" ref="507830287"/>
 						<reference key="parent" ref="360949347"/>
 					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">109</int>
-						<reference key="object" ref="195875126"/>
-						<reference key="parent" ref="267984052"/>
-					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -331,7 +313,6 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>-1.CustomClassName</string>
 					<string>-2.CustomClassName</string>
-					<string>109.IBPluginDependency</string>
 					<string>71.IBEditorWindowLastContentRect</string>
 					<string>71.IBPluginDependency</string>
 					<string>74.IBPluginDependency</string>
@@ -347,7 +328,6 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>ClassBrowserViewController</string>
 					<string>UIResponder</string>
-					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>{{407, 270}, {320, 460}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -399,7 +379,6 @@
 							<string>classSearchButtonItem</string>
 							<string>itemClassMethods</string>
 							<string>itemInstanceMethods</string>
-							<string>itemInstanceVariables</string>
 							<string>itemProperties</string>
 							<string>itemProtocols</string>
 							<string>itemSubclasses</string>
@@ -409,7 +388,6 @@
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>UIBarButtonItem</string>
-							<string>UITabBarItem</string>
 							<string>UITabBarItem</string>
 							<string>UITabBarItem</string>
 							<string>UITabBarItem</string>
@@ -436,14 +414,14 @@
 					<string key="className">NSObject</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">Classes/IndexedDataSource.h</string>
+						<string key="minorKey">Classes/SubclassesWithImageSectionsDataSource.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">NSObject</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">Classes/SubclassesWithImageSectionsDataSource.h</string>
+						<string key="minorKey">DataSources/IndexedDataSource.h</string>
 					</object>
 				</object>
 			</object>
