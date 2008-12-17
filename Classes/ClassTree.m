@@ -85,6 +85,7 @@ static ClassTree *sharedClassTreeInstance = nil;
 			Class class = classes[i];
 			NSString *className = nil;
 			NSString *subClassName = nil;
+			const char *imageName = NULL;
 			while (class) {
 				imageName = class_getImageName(class);
 				if (strstr(imageName,[applicationBundlePath cStringUsingEncoding:NSNEXTSTEPStringEncoding])) {
