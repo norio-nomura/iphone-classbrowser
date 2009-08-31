@@ -13,6 +13,7 @@
 	@private
 	NSMutableArray *dataSourcesArray;
 	NSMutableArray *initialDataSourcesArray;
+	NSInteger previousScopeButtonIndex;
 	NSString *previousSearchText;
 }
 
@@ -22,6 +23,7 @@
 @property (nonatomic,retain) IBOutlet UITabBar *tabBar;
 @property (nonatomic,retain) NSMutableArray *dataSourcesArray;
 @property (nonatomic,retain) NSMutableArray *initialDataSourcesArray;
+@property (nonatomic,assign) NSInteger previousScopeButtonIndex;
 @property (nonatomic,copy) NSString *previousSearchText;
 
 @end

@@ -18,6 +18,7 @@
 @synthesize tabBar;
 @synthesize dataSourcesArray;
 @synthesize initialDataSourcesArray;
+@synthesize previousScopeButtonIndex;
 @synthesize previousSearchText;
 
 
@@ -53,7 +54,59 @@
 	tabBar.selectedItem = [tabBar.items objectAtIndex:0];
 	tableView.dataSource = [dataSourcesArray objectAtIndex:tabBar.selectedItem.tag];
 	[tableView reloadData];
-}	
+}
+
+
+- (void)refreshDataSourcesArray {
+	NSString *searchText = self.searchBar.text;
+	if (searchText.length > 0) {
+		// from subclassesDataSource
+		SubclassesDataSource *currentSubclassesDataSource;
+		NSMutableArray *filteredArray = [NSMutableArray array];
+		switch (self.searchBar.selectedScopeButtonIndex) {
+			case 0:
+				if (previousScopeButtonIndex == 0 && previousSearchText && NSNotFound != [searchText rangeOfString:previousSearchText options:NSCaseInsensitiveSearch].location) {
+					currentSubclassesDataSource = [dataSourcesArray objectAtIndex:0];
+				} else {
+					currentSubclassesDataSource = [initialDataSourcesArray objectAtIndex:0];
+				}
+				for (NSArray *classNamesArray in [currentSubclassesDataSource.rows allValues]) {
+					for (NSString *className in classNamesArray) {
+						if (NSNotFound != [className rangeOfString:searchText options:NSCaseInsensitiveSearch].location) {
+							[filteredArray addObject:className];
+						}
+					}
+				}
+				break;
+			default: {
+				if (previousScopeButtonIndex != 0 && previousSearchText && [searchText hasPrefix:previousSearchText]) {
+					currentSubclassesDataSource = [dataSourcesArray objectAtIndex:0];
+				} else {
+					currentSubclassesDataSource = [initialDataSourcesArray objectAtIndex:0];
+				}
+				NSArray *classNamesArray = [[currentSubclassesDataSource.rows objectForKey:[searchText capitalChar]] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
+				for (NSString *className in classNamesArray) {
+					NSComparisonResult result = [className compare:searchText options:NSCaseInsensitiveSearch range:NSMakeRange(0, searchText.length)];
+					if (result == NSOrderedSame) {
+						[filteredArray addObject:className];
+					} else if (result == NSOrderedDescending) {
+						break;
+					}
+				}
+				break;
+			}
+		}
+		SubclassesDataSource * subclassesDataSource = [[SubclassesDataSource alloc] initWithArray:filteredArray];
+		[dataSourcesArray replaceObjectAtIndex:0 withObject:subclassesDataSource];
+		[subclassesDataSource release];
+		SubclassesWithImageSectionsDataSource *subclassesWithImageSectionsDataSource = [[SubclassesWithImageSectionsDataSource alloc] initWithArray:filteredArray];
+		[dataSourcesArray replaceObjectAtIndex:1 withObject:subclassesWithImageSectionsDataSource];
+		[subclassesWithImageSectionsDataSource release];
+	} else {
+		[dataSourcesArray replaceObjectAtIndex:0 withObject:[initialDataSourcesArray objectAtIndex:0]];
+		[dataSourcesArray replaceObjectAtIndex:1 withObject:[initialDataSourcesArray objectAtIndex:1]];
+	}
+}
 
 
 #pragma mark UIViewController Class
@@ -121,37 +174,19 @@
 #pragma mark UISearchBarDelegate
 
 
+- (void)searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope {
+	[self refreshDataSourcesArray];
+	self.previousScopeButtonIndex = selectedScope;
+
+	tableView.dataSource = [dataSourcesArray objectAtIndex:tabBar.selectedItem.tag];
+	[tableView reloadData];
+}
+
+
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
-	if (searchText.length > 0) {
-		// from subclassesDataSource
-		SubclassesDataSource *currentSubclassesDataSource;
-		if (previousSearchText && [searchText hasPrefix:previousSearchText]) {
-			currentSubclassesDataSource = [dataSourcesArray objectAtIndex:0];
-		} else {
-			currentSubclassesDataSource = [initialDataSourcesArray objectAtIndex:0];
-		}
-		self.previousSearchText = searchText;
-		NSArray *classNamesArray = [[currentSubclassesDataSource.rows objectForKey:[searchText capitalChar]] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
-		NSMutableArray *filteredArray = [NSMutableArray arrayWithCapacity:[classNamesArray count]];
-		for (NSString *className in classNamesArray) {
-			NSComparisonResult result = [className compare:searchText options:NSCaseInsensitiveSearch range:NSMakeRange(0, searchText.length)];
-			if (result == NSOrderedSame) {
-				[filteredArray addObject:className];
-			} else if (result == NSOrderedDescending) {
-				break;
-			}
-		}
-		SubclassesDataSource * subclassesDataSource = [[SubclassesDataSource alloc] initWithArray:filteredArray];
-		[dataSourcesArray replaceObjectAtIndex:0 withObject:subclassesDataSource];
-		[subclassesDataSource release];
-		SubclassesWithImageSectionsDataSource *subclassesWithImageSectionsDataSource = [[SubclassesWithImageSectionsDataSource alloc] initWithArray:filteredArray];
-		[dataSourcesArray replaceObjectAtIndex:1 withObject:subclassesWithImageSectionsDataSource];
-		[subclassesWithImageSectionsDataSource release];
-	} else {
-		[dataSourcesArray replaceObjectAtIndex:0 withObject:[initialDataSourcesArray objectAtIndex:0]];
-		[dataSourcesArray replaceObjectAtIndex:1 withObject:[initialDataSourcesArray objectAtIndex:1]];
-	}
-	
+	[self refreshDataSourcesArray];
+	self.previousSearchText = searchText;
+
 	tableView.dataSource = [dataSourcesArray objectAtIndex:tabBar.selectedItem.tag];
 	[tableView reloadData];
 }

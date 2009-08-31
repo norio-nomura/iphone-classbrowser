@@ -413,8 +413,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "07F53DE9-482F-4C01-B69C-C804B9BEC55D";
-				SDKROOT = iphoneos2.2;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "61E2B742-CDD4-4176-B525-FAEFB8149279";
+				SDKROOT = iphoneos3.0;
 			};
 			name = Distribution;
 		};
@@ -449,8 +449,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "514187E0-229F-4F7A-B785-48C7345C3691";
-				SDKROOT = iphoneos2.2;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "665C8E51-8F35-442E-8A42-CCE2CDA87020";
+				SDKROOT = iphoneos3.0;
 			};
 			name = "Ad Hoc";
 		};
@@ -485,7 +485,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
-				SDKROOT = iphoneos2.2;
+				SDKROOT = iphoneos3.0;
 			};
 			name = Debug;
 		};
@@ -498,7 +498,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = iphoneos2.2;
+				SDKROOT = iphoneos3.0;
 			};
 			name = Release;
 		};
