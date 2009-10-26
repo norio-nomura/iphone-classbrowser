@@ -125,12 +125,12 @@ static ClassTree *sharedClassTreeInstance = nil;
 		NSDirectoryEnumerator *dirEnum = [[NSFileManager defaultManager] enumeratorAtPath:path];
 		while (file = [dirEnum nextObject]) {
 			NSArray *components = [file pathComponents];
-			if ([components count] > 2 && 
-				[[components objectAtIndex:[components count]-2] hasSuffix:@".framework"] && 
-				[[components objectAtIndex:[components count]-2] hasPrefix:[components lastObject]] &&
-				[[[components lastObject] pathExtension] isEqualToString: @""]) {
-				libraryPath = [path stringByAppendingPathComponent:file];
-				dlopen([libraryPath cStringUsingEncoding:NSNEXTSTEPStringEncoding],RTLD_NOW|RTLD_GLOBAL);
+			if ([components count] > 1 &&
+				[[components lastObject] hasSuffix: @".framework"]) {
+				libraryPath = [[path stringByAppendingPathComponent:file] stringByAppendingPathComponent:[[components lastObject] stringByDeletingPathExtension]];
+				if (!dlopen([libraryPath cStringUsingEncoding:NSNEXTSTEPStringEncoding],RTLD_NOW|RTLD_GLOBAL)) {
+					NSLog(@"dlopen fail:%@",libraryPath);
+				}
 			}
 		}
 	}
