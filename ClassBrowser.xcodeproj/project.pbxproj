@@ -67,7 +67,7 @@
 		6C02537B0ED7A5B0006D5211 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		6C05C2870EF8744A00D6FAD4 /* IndexedDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexedDataSource.h; sourceTree = "<group>"; };
 		6C05C2880EF8744A00D6FAD4 /* IndexedDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexedDataSource.m; sourceTree = "<group>"; };
-		6C46B2540ED976BE00777058 /* iTunesArtwork */ = {isa = PBXFileReference; comments = "Ad Hocビルドを作る際、ターゲットに含める事"; lastKnownFileType = file; name = iTunesArtwork; path = Images/iTunesArtwork; sourceTree = "<group>"; };
+		6C46B2540ED976BE00777058 /* iTunesArtwork */ = {isa = PBXFileReference; comments = "Ad Hocビルドを作る際、ターゲットに含める事"; explicitFileType = image.jpeg; name = iTunesArtwork; path = Images/iTunesArtwork; sourceTree = "<group>"; };
 		6C4C1A790ECFF43D00BF12F1 /* ClassSearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClassSearchViewController.xib; sourceTree = "<group>"; };
 		6C4C1A7D0ECFF52F00BF12F1 /* ClassSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassSearchViewController.h; sourceTree = "<group>"; };
 		6C4C1A7E0ECFF52F00BF12F1 /* ClassSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassSearchViewController.m; sourceTree = "<group>"; };
