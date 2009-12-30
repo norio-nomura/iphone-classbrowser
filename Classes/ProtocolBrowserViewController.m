@@ -191,7 +191,8 @@
 #pragma mark UITableViewDelegate Protocol
 
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	[aTableView deselectRowAtIndexPath:indexPath animated:NO];
 	if ([tabBar.selectedItem isEqual:itemProtocols]) {
 		ClassBrowserAppDelegate *appDelegate = (ClassBrowserAppDelegate *)[[UIApplication sharedApplication] delegate];
 		[appDelegate pushClass:[[[dataSourcesArray objectAtIndex:itemProtocols.tag] objectForRowAtIndexPath:indexPath] description]];
