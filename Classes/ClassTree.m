@@ -76,6 +76,8 @@ static ClassTree *sharedClassTreeInstance = nil;
 	[classDictionary_ setObject:subclassDictionary forKey:KEY_ROOT_CLASSES];
 	[subclassDictionary release];
 	
+	NSString *applicationBundlePath = [[NSBundle mainBundle] bundlePath];
+	
 	int numberOfClasses = objc_getClassList(NULL,0);
 	Class classes[numberOfClasses];
 	if (objc_getClassList(classes,numberOfClasses)) {
@@ -83,7 +85,13 @@ static ClassTree *sharedClassTreeInstance = nil;
 			Class class = classes[i];
 			NSString *className = nil;
 			NSString *subClassName = nil;
+			const char *imageName = NULL;
 			while (class) {
+				imageName = class_getImageName(class);
+				if (strstr(imageName,[applicationBundlePath cStringUsingEncoding:NSNEXTSTEPStringEncoding])) {
+					subClassName = nil;
+					break;
+				}
 				className = [NSString stringWithCString:class_getName(class) encoding:NSNEXTSTEPStringEncoding];
 				if (!(subclassDictionary = [classDictionary_ objectForKey:className])) {
 					subclassDictionary = [[NSMutableDictionary alloc] initWithCapacity:0];
@@ -96,7 +104,9 @@ static ClassTree *sharedClassTreeInstance = nil;
 				subClassName = className;
 				class = class_getSuperclass(class);
 			}
-			[[classDictionary_ objectForKey:KEY_ROOT_CLASSES] setObject:[classDictionary_ objectForKey:subClassName] forKey:subClassName];
+			if (subClassName) {
+				[[classDictionary_ objectForKey:KEY_ROOT_CLASSES] setObject:[classDictionary_ objectForKey:subClassName] forKey:subClassName];
+			}
 		}
 	}
 
@@ -105,26 +115,52 @@ static ClassTree *sharedClassTreeInstance = nil;
 }
 
 
+#define kLAST_CACHED_SYSTEM_VERSION @"lastCachedSystemVersion"
+#define kALL_LOADABLE_LIBRARIES_PATH_CACHE @"allLoadableLibrariesPathCache"
+
+
 - (void)loadAllFrameworks {
-	NSArray *allLibrariesPath = NSSearchPathForDirectoriesInDomains(NSAllLibrariesDirectory,NSSystemDomainMask,NO);
-	NSArray *ignorePaths = NSSearchPathForDirectoriesInDomains(NSDeveloperDirectory,NSSystemDomainMask,NO);
-	NSMutableArray *searchPaths = [allLibrariesPath mutableCopy];
-	[searchPaths removeObjectsInArray:ignorePaths];
-	for (NSString *path in searchPaths) {
-		NSString *file, *libraryPath;
-		NSDirectoryEnumerator *dirEnum = [[NSFileManager defaultManager] enumeratorAtPath:path];
-		while (file = [dirEnum nextObject]) {
-			NSArray *components = [file pathComponents];
-			if ([components count] > 2 && 
-				[[components objectAtIndex:[components count]-2] hasSuffix:@".framework"] && 
-				[[components objectAtIndex:[components count]-2] hasPrefix:[components lastObject]] &&
-				[[[components lastObject] pathExtension] isEqualToString: @""]) {
-				libraryPath = [path stringByAppendingPathComponent:file];
-				dlopen([libraryPath cStringUsingEncoding:NSNEXTSTEPStringEncoding],RTLD_NOW|RTLD_GLOBAL);
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	NSString *lastRunSystemVersion = [defaults stringForKey:kLAST_CACHED_SYSTEM_VERSION];
+	NSArray *allLoadableLibrariesPathCache = [defaults arrayForKey:kALL_LOADABLE_LIBRARIES_PATH_CACHE];
+	if ([lastRunSystemVersion isEqualToString:[[UIDevice currentDevice]systemVersion]] &&
+		[allLoadableLibrariesPathCache count] > 0) {
+		
+		for (NSString *libraryPath in allLoadableLibrariesPathCache) {
+			if (!dlopen([libraryPath cStringUsingEncoding:NSNEXTSTEPStringEncoding],RTLD_NOW|RTLD_GLOBAL)) {
+				NSLog(@"dlopen fail:%@",libraryPath);
 			}
 		}
+		
+	} else {
+		NSMutableArray *allLoadableLibrariesPath = [NSMutableArray array];
+		
+		NSArray *allLibrariesPath = NSSearchPathForDirectoriesInDomains(NSAllLibrariesDirectory,NSSystemDomainMask,NO);
+		NSArray *ignorePaths = NSSearchPathForDirectoriesInDomains(NSDeveloperDirectory,NSSystemDomainMask,NO);
+		NSMutableArray *searchPaths = [allLibrariesPath mutableCopy];
+		[searchPaths removeObjectsInArray:ignorePaths];
+		for (NSString *path in searchPaths) {
+			NSString *file, *libraryPath;
+			NSDirectoryEnumerator *dirEnum = [[NSFileManager defaultManager] enumeratorAtPath:path];
+			while (file = [dirEnum nextObject]) {
+				NSArray *components = [file pathComponents];
+				if ([components count] > 1 &&
+					[[components lastObject] hasSuffix: @".framework"]) {
+					libraryPath = [[path stringByAppendingPathComponent:file] stringByAppendingPathComponent:[[components lastObject] stringByDeletingPathExtension]];
+					if (dlopen([libraryPath cStringUsingEncoding:NSNEXTSTEPStringEncoding],RTLD_NOW|RTLD_GLOBAL)) {
+						[allLoadableLibrariesPath addObject:libraryPath];
+					} else {
+						NSLog(@"dlopen fail:%@",libraryPath);
+					}
+				}
+			}
+		}
+		[searchPaths release];
+		
+		[defaults setObject:[[UIDevice currentDevice]systemVersion] forKey:kLAST_CACHED_SYSTEM_VERSION];
+		[defaults setObject:allLoadableLibrariesPath forKey:kALL_LOADABLE_LIBRARIES_PATH_CACHE];
+		[defaults synchronize];
 	}
-	[searchPaths release];
 }
 
 

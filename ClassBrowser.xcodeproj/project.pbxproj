@@ -12,6 +12,7 @@
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		28D7ACF80DDB3853001CB0EB /* ClassBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* ClassBrowserViewController.m */; };
 		6C05C2890EF8744A00D6FAD4 /* IndexedDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C05C2880EF8744A00D6FAD4 /* IndexedDataSource.m */; };
+		6C0F572310EB5B3200603EC7 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 6C46B2540ED976BE00777058 /* iTunesArtwork */; };
 		6C4C1A7A0ECFF43D00BF12F1 /* ClassSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C4C1A790ECFF43D00BF12F1 /* ClassSearchViewController.xib */; };
 		6C4C1A7F0ECFF52F00BF12F1 /* ClassSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4C1A7E0ECFF52F00BF12F1 /* ClassSearchViewController.m */; };
 		6C64DE7B0ECBFE3D003A3DF2 /* ClassTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C64DE7A0ECBFE3D003A3DF2 /* ClassTree.m */; };
@@ -67,7 +68,7 @@
 		6C02537B0ED7A5B0006D5211 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		6C05C2870EF8744A00D6FAD4 /* IndexedDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexedDataSource.h; sourceTree = "<group>"; };
 		6C05C2880EF8744A00D6FAD4 /* IndexedDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexedDataSource.m; sourceTree = "<group>"; };
-		6C46B2540ED976BE00777058 /* iTunesArtwork */ = {isa = PBXFileReference; comments = "Ad Hocビルドを作る際、ターゲットに含める事"; lastKnownFileType = file; name = iTunesArtwork; path = Images/iTunesArtwork; sourceTree = "<group>"; };
+		6C46B2540ED976BE00777058 /* iTunesArtwork */ = {isa = PBXFileReference; comments = "Ad Hocビルドを作る際、ターゲットに含める事"; explicitFileType = image.jpeg; name = iTunesArtwork; path = Images/iTunesArtwork; sourceTree = "<group>"; };
 		6C4C1A790ECFF43D00BF12F1 /* ClassSearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClassSearchViewController.xib; sourceTree = "<group>"; };
 		6C4C1A7D0ECFF52F00BF12F1 /* ClassSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassSearchViewController.h; sourceTree = "<group>"; };
 		6C4C1A7E0ECFF52F00BF12F1 /* ClassSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassSearchViewController.m; sourceTree = "<group>"; };
@@ -332,6 +333,7 @@
 				6CF26F7F0EDA5B2A00AB6DBC /* Entitlements.plist in Resources */,
 				6CE943D60EE22BA800B0F058 /* SubclassesDataSource.xib in Resources */,
 				6CE9448D0EE2463000B0F058 /* LoadCellFromNibDataSource.xib in Resources */,
+				6C0F572310EB5B3200603EC7 /* iTunesArtwork in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,8 +415,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "07F53DE9-482F-4C01-B69C-C804B9BEC55D";
-				SDKROOT = iphoneos2.2;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "61E2B742-CDD4-4176-B525-FAEFB8149279";
+				SDKROOT = iphoneos3.1;
 			};
 			name = Distribution;
 		};
@@ -449,8 +451,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "514187E0-229F-4F7A-B785-48C7345C3691";
-				SDKROOT = iphoneos2.2;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "521372ED-338F-49C3-8456-99A63A188862";
+				SDKROOT = iphoneos3.1;
 			};
 			name = "Ad Hoc";
 		};
@@ -485,7 +487,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
-				SDKROOT = iphoneos2.2;
+				SDKROOT = iphoneos3.1;
 			};
 			name = Debug;
 		};
@@ -498,7 +500,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = iphoneos2.2;
+				SDKROOT = iphoneos3.1;
 			};
 			name = Release;
 		};

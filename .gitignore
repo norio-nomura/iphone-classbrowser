@@ -6,5 +6,6 @@ documents
 *.ob
 *.pbxuser
 *.tmproj
-*.mode1*
+*.perspectivev3
+*.mode*
 *.build
