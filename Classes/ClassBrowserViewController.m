@@ -20,7 +20,7 @@
 @synthesize itemClassMethods;
 @synthesize itemInstanceMethods;
 @synthesize itemProtocols;
-//@synthesize itemInstanceVariables;
+@synthesize itemInstanceVariables;
 @synthesize classSearchButtonItem;
 @synthesize dataSourcesArray;
 
@@ -33,7 +33,7 @@
 	[itemClassMethods release];
 	[itemInstanceMethods release];
 	[itemProtocols release];
-//	[itemInstanceVariables release];
+	[itemInstanceVariables release];
 	[classSearchButtonItem release];
 	[dataSourcesArray release];
     [super dealloc];
@@ -140,7 +140,6 @@
 			itemProtocols.enabled = NO;
 		}
 		// Instance Variables
-		/*
 		Ivar *instanceVariables = class_copyIvarList(class, &outCount);
 		if (outCount) {
 			array = [[NSMutableArray alloc] initWithCapacity:outCount];
@@ -160,13 +159,12 @@
 		} else {
 			itemInstanceVariables.enabled = NO;
 		}
-		 */
 	} else {
 		itemProperties.enabled = NO;
 		itemClassMethods.enabled = NO;
 		itemInstanceMethods.enabled = NO;
 		itemProtocols.enabled = NO;
-//		itemInstanceVariables.enabled = NO;
+		itemInstanceVariables.enabled = NO;
 	}
 	
 	for (UITabBarItem* item in tabBar.items) {
