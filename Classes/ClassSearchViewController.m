@@ -50,6 +50,7 @@
 	[dataSourcesArray addObject:[ClassTree sharedClassTree].subclassesWithImageSectionsDataSource];
 	[initialDataSourcesArray addObject:[ClassTree sharedClassTree].subclassesWithImageSectionsDataSource];
 	[[tabBar.items objectAtIndex:[dataSourcesArray count] - 1] setTag:tag++];
+	#pragma unused(tag)
 	
 	tabBar.selectedItem = [tabBar.items objectAtIndex:0];
 	tableView.dataSource = [dataSourcesArray objectAtIndex:tabBar.selectedItem.tag];
@@ -114,6 +115,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	self.segmentedControl = [[[UISegmentedControl alloc]initWithItems:[NSArray arrayWithObjects:@"keep",@"tree",nil]]autorelease];
+	self.segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
+	self.segmentedControl.selectedSegmentIndex = 0;
+	self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithCustomView:self.segmentedControl]autorelease];
 	searchBar.autocorrectionType = UITextAutocorrectionTypeNo;
 	[self loadDataSources];
 }

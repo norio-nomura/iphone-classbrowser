@@ -12,19 +12,22 @@
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		28D7ACF80DDB3853001CB0EB /* ClassBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* ClassBrowserViewController.m */; };
 		6C05C2890EF8744A00D6FAD4 /* IndexedDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C05C2880EF8744A00D6FAD4 /* IndexedDataSource.m */; };
-		6C0F572310EB5B3200603EC7 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 6C46B2540ED976BE00777058 /* iTunesArtwork */; };
+		6C08B01411570CF600E2889E /* Default-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C08B01211570CF600E2889E /* Default-Landscape.png */; };
+		6C08B01511570CF600E2889E /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C08B01311570CF600E2889E /* Default-Portrait.png */; };
+		6C08B06F115718A700E2889E /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C08B06E115718A700E2889E /* SplashViewController.m */; };
+		6C08B09711572DC400E2889E /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C08B09611572DC400E2889E /* MainWindow-iPad.xib */; };
+		6C08B1581157398F00E2889E /* Icon72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C08B1561157398F00E2889E /* Icon72x72.png */; };
+		6C08B1591157398F00E2889E /* Icon57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C08B1571157398F00E2889E /* Icon57x57.png */; };
 		6C4C1A7A0ECFF43D00BF12F1 /* ClassSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C4C1A790ECFF43D00BF12F1 /* ClassSearchViewController.xib */; };
 		6C4C1A7F0ECFF52F00BF12F1 /* ClassSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4C1A7E0ECFF52F00BF12F1 /* ClassSearchViewController.m */; };
 		6C64DE7B0ECBFE3D003A3DF2 /* ClassTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C64DE7A0ECBFE3D003A3DF2 /* ClassTree.m */; };
 		6C776D410ED5242600C73AF3 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C776D400ED5242600C73AF3 /* Default.png */; };
-		6C776D890ED531B100C73AF3 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C776D880ED531B100C73AF3 /* Icon.png */; };
 		6C776E110ED538CC00C73AF3 /* btnCMethod.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C776E0C0ED538CC00C73AF3 /* btnCMethod.png */; };
 		6C776E120ED538CC00C73AF3 /* btnIMethod.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C776E0D0ED538CC00C73AF3 /* btnIMethod.png */; };
 		6C776E130ED538CC00C73AF3 /* btnProperty.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C776E0E0ED538CC00C73AF3 /* btnProperty.png */; };
 		6C776E140ED538CC00C73AF3 /* btnProtocol.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C776E0F0ED538CC00C73AF3 /* btnProtocol.png */; };
 		6C776E150ED538CC00C73AF3 /* btnSubCls.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C776E100ED538CC00C73AF3 /* btnSubCls.png */; };
 		6C776E540ED541F300C73AF3 /* btnIndexByImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C776E530ED541F300C73AF3 /* btnIndexByImage.png */; };
-		6C7DBF070ECE548D0089E3E5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6C7DBF060ECE548D0089E3E5 /* InfoPlist.strings */; };
 		6C801DF20EDA348D009A03B0 /* ProtocolBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C801DF10EDA348D009A03B0 /* ProtocolBrowserViewController.m */; };
 		6C801DF40EDA36A5009A03B0 /* ProtocolBrowserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C801DF30EDA36A5009A03B0 /* ProtocolBrowserViewController.xib */; };
 		6C801E730EDA4D08009A03B0 /* btnOptional.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C801E710EDA4D08009A03B0 /* btnOptional.png */; };
@@ -68,21 +71,26 @@
 		6C02537B0ED7A5B0006D5211 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		6C05C2870EF8744A00D6FAD4 /* IndexedDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexedDataSource.h; sourceTree = "<group>"; };
 		6C05C2880EF8744A00D6FAD4 /* IndexedDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexedDataSource.m; sourceTree = "<group>"; };
-		6C46B2540ED976BE00777058 /* iTunesArtwork */ = {isa = PBXFileReference; comments = "Ad Hocビルドを作る際、ターゲットに含める事"; explicitFileType = image.jpeg; name = iTunesArtwork; path = Images/iTunesArtwork; sourceTree = "<group>"; };
+		6C08B01211570CF600E2889E /* Default-Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape.png"; path = "Images/Default-Landscape.png"; sourceTree = "<group>"; };
+		6C08B01311570CF600E2889E /* Default-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait.png"; path = "Images/Default-Portrait.png"; sourceTree = "<group>"; };
+		6C08B06D115718A700E2889E /* SplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashViewController.h; sourceTree = "<group>"; };
+		6C08B06E115718A700E2889E /* SplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
+		6C08B09611572DC400E2889E /* MainWindow-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "MainWindow-iPad.xib"; sourceTree = "<group>"; };
+		6C08B1561157398F00E2889E /* Icon72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon72x72.png; path = Images/Icon72x72.png; sourceTree = "<group>"; };
+		6C08B1571157398F00E2889E /* Icon57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon57x57.png; path = Images/Icon57x57.png; sourceTree = "<group>"; };
+		6C2A560711574BD2009880E1 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iTunesArtwork.png; path = Images/iTunesArtwork.png; sourceTree = "<group>"; };
 		6C4C1A790ECFF43D00BF12F1 /* ClassSearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClassSearchViewController.xib; sourceTree = "<group>"; };
 		6C4C1A7D0ECFF52F00BF12F1 /* ClassSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassSearchViewController.h; sourceTree = "<group>"; };
 		6C4C1A7E0ECFF52F00BF12F1 /* ClassSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassSearchViewController.m; sourceTree = "<group>"; };
 		6C64DE790ECBFE3D003A3DF2 /* ClassTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassTree.h; sourceTree = "<group>"; };
 		6C64DE7A0ECBFE3D003A3DF2 /* ClassTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassTree.m; sourceTree = "<group>"; };
 		6C776D400ED5242600C73AF3 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Images/Default.png; sourceTree = "<group>"; };
-		6C776D880ED531B100C73AF3 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = Images/Icon.png; sourceTree = "<group>"; };
 		6C776E0C0ED538CC00C73AF3 /* btnCMethod.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btnCMethod.png; path = Images/btnCMethod.png; sourceTree = "<group>"; };
 		6C776E0D0ED538CC00C73AF3 /* btnIMethod.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btnIMethod.png; path = Images/btnIMethod.png; sourceTree = "<group>"; };
 		6C776E0E0ED538CC00C73AF3 /* btnProperty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btnProperty.png; path = Images/btnProperty.png; sourceTree = "<group>"; };
 		6C776E0F0ED538CC00C73AF3 /* btnProtocol.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btnProtocol.png; path = Images/btnProtocol.png; sourceTree = "<group>"; };
 		6C776E100ED538CC00C73AF3 /* btnSubCls.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btnSubCls.png; path = Images/btnSubCls.png; sourceTree = "<group>"; };
 		6C776E530ED541F300C73AF3 /* btnIndexByImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btnIndexByImage.png; path = Images/btnIndexByImage.png; sourceTree = "<group>"; };
-		6C7DBF060ECE548D0089E3E5 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		6C801DF00EDA348D009A03B0 /* ProtocolBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProtocolBrowserViewController.h; sourceTree = "<group>"; };
 		6C801DF10EDA348D009A03B0 /* ProtocolBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProtocolBrowserViewController.m; sourceTree = "<group>"; };
 		6C801DF30EDA36A5009A03B0 /* ProtocolBrowserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProtocolBrowserViewController.xib; sourceTree = "<group>"; };
@@ -161,6 +169,8 @@
 				6C64DE7A0ECBFE3D003A3DF2 /* ClassTree.m */,
 				6C801DF00EDA348D009A03B0 /* ProtocolBrowserViewController.h */,
 				6C801DF10EDA348D009A03B0 /* ProtocolBrowserViewController.m */,
+				6C08B06D115718A700E2889E /* SplashViewController.h */,
+				6C08B06E115718A700E2889E /* SplashViewController.m */,
 				6C8272C40ED2894400B5CEEB /* SubclassesCell.h */,
 				6C8272C50ED2894400B5CEEB /* SubclassesCell.m */,
 				6C82727D0ED285BA00B5CEEB /* SubclassesDataSource.h */,
@@ -209,8 +219,8 @@
 				6C4C1A790ECFF43D00BF12F1 /* ClassSearchViewController.xib */,
 				6CF26F7E0EDA5B2A00AB6DBC /* Entitlements.plist */,
 				8D1107310486CEB800E47090 /* Info.plist */,
-				6C7DBF060ECE548D0089E3E5 /* InfoPlist.strings */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
+				6C08B09611572DC400E2889E /* MainWindow-iPad.xib */,
 				6C801DF30EDA36A5009A03B0 /* ProtocolBrowserViewController.xib */,
 				6CE943D50EE22BA800B0F058 /* SubclassesDataSource.xib */,
 			);
@@ -244,8 +254,11 @@
 		6C776D420ED5245000C73AF3 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				6C776D880ED531B100C73AF3 /* Icon.png */,
+				6C08B1571157398F00E2889E /* Icon57x57.png */,
+				6C08B1561157398F00E2889E /* Icon72x72.png */,
 				6C776D400ED5242600C73AF3 /* Default.png */,
+				6C08B01311570CF600E2889E /* Default-Portrait.png */,
+				6C08B01211570CF600E2889E /* Default-Landscape.png */,
 				6C776E0C0ED538CC00C73AF3 /* btnCMethod.png */,
 				6C776E0D0ED538CC00C73AF3 /* btnIMethod.png */,
 				6C776E530ED541F300C73AF3 /* btnIndexByImage.png */,
@@ -254,7 +267,7 @@
 				6C776E0F0ED538CC00C73AF3 /* btnProtocol.png */,
 				6C801E720EDA4D08009A03B0 /* btnRequired.png */,
 				6C776E100ED538CC00C73AF3 /* btnSubCls.png */,
-				6C46B2540ED976BE00777058 /* iTunesArtwork */,
+				6C2A560711574BD2009880E1 /* iTunesArtwork.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -283,6 +296,7 @@
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
 				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+				6C2A560111574AFA009880E1 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -317,10 +331,8 @@
 			files = (
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
 				6CA317280ECD611700B4CDEC /* ClassBrowserViewController.xib in Resources */,
-				6C7DBF070ECE548D0089E3E5 /* InfoPlist.strings in Resources */,
 				6C4C1A7A0ECFF43D00BF12F1 /* ClassSearchViewController.xib in Resources */,
 				6C776D410ED5242600C73AF3 /* Default.png in Resources */,
-				6C776D890ED531B100C73AF3 /* Icon.png in Resources */,
 				6C776E110ED538CC00C73AF3 /* btnCMethod.png in Resources */,
 				6C776E120ED538CC00C73AF3 /* btnIMethod.png in Resources */,
 				6C776E130ED538CC00C73AF3 /* btnProperty.png in Resources */,
@@ -333,11 +345,32 @@
 				6CF26F7F0EDA5B2A00AB6DBC /* Entitlements.plist in Resources */,
 				6CE943D60EE22BA800B0F058 /* SubclassesDataSource.xib in Resources */,
 				6CE9448D0EE2463000B0F058 /* LoadCellFromNibDataSource.xib in Resources */,
-				6C0F572310EB5B3200603EC7 /* iTunesArtwork in Resources */,
+				6C08B01411570CF600E2889E /* Default-Landscape.png in Resources */,
+				6C08B01511570CF600E2889E /* Default-Portrait.png in Resources */,
+				6C08B09711572DC400E2889E /* MainWindow-iPad.xib in Resources */,
+				6C08B1581157398F00E2889E /* Icon72x72.png in Resources */,
+				6C08B1591157398F00E2889E /* Icon57x57.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6C2A560111574AFA009880E1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Images/iTunesArtwork.png",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"${CONFIGURATION}\" = \"Ad Hoc\" ]; then\n\tcp \"${SRCROOT}/Images/iTunesArtwork.png\" \"${TARGET_BUILD_DIR}/${CONTENTS_FOLDER_PATH}/iTunesArtwork\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1D60588E0D05DD3D006BFB54 /* Sources */ = {
@@ -356,6 +389,7 @@
 				6CE9448C0EE2463000B0F058 /* LoadCellFromNibDataSource.m in Sources */,
 				6CE944990EE2471D00B0F058 /* CellFromNib.m in Sources */,
 				6C05C2890EF8744A00D6FAD4 /* IndexedDataSource.m in Sources */,
+				6C08B06F115718A700E2889E /* SplashViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,20 +401,11 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks\"",
-				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ClassBrowser_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/CoreServices/Encodings\"",
-					"\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/VideoDecoders\"",
-				);
 				PRODUCT_NAME = ClassBrowser;
 			};
 			name = Debug;
@@ -390,18 +415,9 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks\"",
-				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ClassBrowser_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/CoreServices/Encodings\"",
-					"\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/VideoDecoders\"",
-				);
 				PRODUCT_NAME = ClassBrowser;
 			};
 			name = Release;
@@ -409,14 +425,16 @@
 		6C776E6A0ED54A9A00C73AF3 /* Distribution */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Norio Nomura";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
 				PREBINDING = NO;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "61E2B742-CDD4-4176-B525-FAEFB8149279";
-				SDKROOT = iphoneos3.1;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4C99C1AF-A4ED-451F-B045-3B51FD68B2A8";
+				SDKROOT = iphoneos3.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Distribution;
 		};
@@ -425,18 +443,9 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks\"",
-				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ClassBrowser_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/CoreServices/Encodings\"",
-					"\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/VideoDecoders\"",
-				);
 				PRODUCT_NAME = ClassBrowser;
 			};
 			name = Distribution;
@@ -444,15 +453,17 @@
 		6C7C17A70ED96E7800545B0A /* Ad Hoc */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Norio Nomura";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
 				PREBINDING = NO;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "521372ED-338F-49C3-8456-99A63A188862";
-				SDKROOT = iphoneos3.1;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "A9271F79-FC9D-40A6-ABE3-5744699E160B";
+				SDKROOT = iphoneos3.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = "Ad Hoc";
 		};
@@ -461,18 +472,9 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks\"",
-				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ClassBrowser_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/CoreServices/Encodings\"",
-					"\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/VideoDecoders\"",
-				);
 				PRODUCT_NAME = ClassBrowser;
 			};
 			name = "Ad Hoc";
@@ -480,27 +482,31 @@
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
-				SDKROOT = iphoneos3.1;
+				SDKROOT = iphoneos3.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
 				PREBINDING = NO;
-				SDKROOT = iphoneos3.1;
+				SDKROOT = iphoneos3.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
