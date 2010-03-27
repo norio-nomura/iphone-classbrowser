@@ -14,7 +14,7 @@
 @implementation ClassBrowserAppDelegate
 
 @synthesize window;
-@synthesize splashView;
+@synthesize splashViewController;
 @synthesize activityIndicatorView;
 @synthesize navigationController;
 @synthesize rootViewController;
@@ -23,7 +23,7 @@
 
 - (void)dealloc {
 	[window release];
-	[splashView release];
+	[splashViewController release];
 	[activityIndicatorView release];
 	[navigationController release];
 	[rootViewController release];
@@ -65,7 +65,7 @@
 	[UIView setAnimationDuration:kANIMATION_DELAY_SECOND];
 	[UIView setAnimationTransition:UIViewAnimationTransitionCurlUp forView:window cache:NO];
 	[activityIndicatorView stopAnimating];
-	[splashView removeFromSuperview];
+	[splashViewController.view removeFromSuperview];
 	rootViewController.title = KEY_ROOT_CLASSES;
 	[window addSubview:[navigationController view]];
 	[UIView commitAnimations];
@@ -75,9 +75,11 @@
 #pragma mark UIApplicationDelegate
 
 
-- (void)applicationDidFinishLaunching:(UIApplication *)application {    
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
+	[window addSubview:splashViewController.view];
 	[window makeKeyAndVisible];
 	[self performSelector:@selector(splashAnimation) withObject:nil afterDelay:0.01];
+	return YES;
 }
 
 

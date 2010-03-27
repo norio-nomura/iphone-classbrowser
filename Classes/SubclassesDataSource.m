@@ -23,7 +23,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     SubclassesCell *cell = (SubclassesCell*)[super tableView:tableView cellForRowAtIndexPath:indexPath];
-	cell.text = nil;
+	cell.textLabel.text = nil;
 	cell.subclassName.text = [[self objectForRowAtIndexPath:indexPath] description];
 	Class class = objc_getClass([cell.subclassName.text cStringUsingEncoding:NSNEXTSTEPStringEncoding]);
 	if (class) {

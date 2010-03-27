@@ -88,7 +88,11 @@ static ClassTree *sharedClassTreeInstance = nil;
 			const char *imageName = NULL;
 			while (class) {
 				imageName = class_getImageName(class);
-				if (strstr(imageName,[applicationBundlePath cStringUsingEncoding:NSNEXTSTEPStringEncoding])) {
+				if (!imageName || 
+#if TARGET_IPHONE_SIMULATOR
+					!strstr(imageName, "iPhoneSimulator.platform") ||
+#endif
+					strstr(imageName,[applicationBundlePath cStringUsingEncoding:NSNEXTSTEPStringEncoding])) {
 					subClassName = nil;
 					break;
 				}
