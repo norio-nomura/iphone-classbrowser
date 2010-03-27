@@ -92,6 +92,7 @@ static ClassTree *sharedClassTreeInstance = nil;
 #if TARGET_IPHONE_SIMULATOR
 					!strstr(imageName, "iPhoneSimulator.platform") ||
 #endif
+					strstr(imageName,"PrivateFrameworks") ||
 					strstr(imageName,[applicationBundlePath cStringUsingEncoding:NSNEXTSTEPStringEncoding])) {
 					subClassName = nil;
 					break;
