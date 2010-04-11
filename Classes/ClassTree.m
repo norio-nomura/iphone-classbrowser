@@ -98,6 +98,16 @@ static ClassTree *sharedClassTreeInstance = nil;
 					break;
 				}
 				className = [NSString stringWithCString:class_getName(class) encoding:NSNEXTSTEPStringEncoding];
+				NSRange range = [className rangeOfString:@"webkit" options:NSCaseInsensitiveSearch];
+				if (range.location != NSNotFound ) {
+					subClassName = nil;
+					break;
+				}
+				range = [className rangeOfString:@"private" options:NSCaseInsensitiveSearch];
+				if (range.location != NSNotFound ) {
+					subClassName = nil;
+					break;
+				}
 				if (!(subclassDictionary = [classDictionary_ objectForKey:className])) {
 					subclassDictionary = [[NSMutableDictionary alloc] initWithCapacity:0];
 					[classDictionary_ setObject:subclassDictionary forKey:className];
